@@ -1,0 +1,151 @@
+@font-face {
+  font-family: grotesk;
+  src: url(./assets/font/SpaceGrotesk.ttf);
+}
+@font-face {
+  font-family: epilogue;
+  src: url(./assets/font/Epilogue.ttf);
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+.grotesk {
+  font-family: grotesk;
+}
+.epilogue {
+  font-family: epilogue;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root {
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #131313;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+.green {
+  color: #e2b030ff;
+}
+a {
+  font-weight: 500;
+  /* color: #017008; */
+  text-decoration: inherit;
+}
+a:hover {
+  color: #e2b030ff;
+}
+
+body {
+  /* margin: 0; */
+  /* display: flex; */
+  /* place-items: center; */
+  /* min-width: 100vw; */
+  /* min-height: 100vh; */
+  overflow-x: hidden;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+button:hover {
+  border-color: #e2b030ff;
+}
+button:focus,
+button:focus-visible {
+  outline: 4px #e2b030ff -webkit-focus-ring-color;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+}
+.blue-glassmorphism {
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(0, 0, 0, 0.3);
+}
+.glass-effect {
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+.white-glassmorphism-01 {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  backdrop-filter: blur(25px);
+  -webkit-backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.modal-glassmorphism {
+  background: rgba(0, 0, 0, 0.582);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* white glassmorphism */
+.white-glassmorphism {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.hero-img {
+  filter: blur(40px);
+}
+.glow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* box-shadow: 0 0 20px 10px rgba(255, 255, 255, 0.5); */
+}
+::-webkit-scrollbar {
+  width: 0px; /* Width of the scrollbar */
+}
