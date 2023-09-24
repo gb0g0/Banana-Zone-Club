@@ -11,7 +11,7 @@ const insta = "https://instagram.com/banana_zone_club";
 const Header = () => {
   const [toogleMenu, setToogleMenu] = useState(false);
   return (
-    <div className="flex md:flex-row justify-between py-[5px] md:px-28 px-10 sm:px- w-screen mt-[5px] mb-[25px] gap-6 grotesk">
+    <div className="flex md:flex-row justify-between py-[5px] md:px-28 px-4 sm:px- w-screen mt-[5px] mb-[25px] gap-6 grotesk">
       <div className="flex items-center justify-center">
         <img src={NFT3} alt="Logo" width="40px" height="40px" />
         <p className="font-semibold ml-[5px]">🍌Banana Zone Club🍌</p>

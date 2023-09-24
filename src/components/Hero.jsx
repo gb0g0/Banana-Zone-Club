@@ -18,7 +18,7 @@ const Hero = () => {
           {/* 
           Buy and join to the luxury club of the upper millennium.
            💎Join and become a Diamond Club member 10/10💎 */}
-          <div>
+          <div className="mb-5">
             <a href="#mint">
               <button className="green border-[#e2b030ff]">Mint Now</button>
             </a>
