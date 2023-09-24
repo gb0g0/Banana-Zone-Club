@@ -1,5 +1,4 @@
 import { useState } from "react";
-import "./App.css";
 import { Header } from "./components";
 import { Hero } from "./components";
 import { Section1, MintSection } from "./components";

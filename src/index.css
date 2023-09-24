@@ -28,15 +28,8 @@ html {
   box-sizing: border-box;
 }
 :root {
-  color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
   background-color: #131313;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-text-size-adjust: 100%;
 }
 .green {
   color: #e2b030ff;
@@ -83,18 +76,7 @@ button:focus-visible {
   outline: 4px #e2b030ff -webkit-focus-ring-color;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
-}
+
 .blue-glassmorphism {
   background: rgba(0, 0, 0, 0.4);
   border-radius: 16px;
