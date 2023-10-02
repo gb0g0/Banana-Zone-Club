@@ -1,15 +1,16 @@
 import logo from "./onlyup.png";
 import NFT from "./NFT.gif";
-import NFT1 from "./NFT1.png";
-import NFT2 from "./NFT2.jpeg";
-import NFT3 from "./NFT3.jpeg";
+import NFT1 from "./NFT1.jpg";
+import NFT2 from "./NFT2.jpg";
+import NFT3 from "./NFT3.png";
 import NFT4 from "./NFT4.jpeg";
 import NFT5 from "./NFT5.jpg";
-import NFT6 from "./NFT6.png";
+import NFT6 from "./NFT6.jpeg";
+import NFT7 from "./NFT7.jpeg";
 import Footer from "./Footer.jpeg";
 import x from "./twitter-x.svg";
 
-export { logo, x, NFT, NFT1, NFT2, NFT3, NFT4, NFT5, NFT6, Footer };
+export { logo, x, NFT, NFT1, NFT2, NFT3, NFT4, NFT5, NFT6, NFT7, Footer };
 // //Banana Zone Club🍌To official Banana Zone Channel
 // https://t.me/BananaZoneClubNFTThe official channel of Banana Zone Club.
 

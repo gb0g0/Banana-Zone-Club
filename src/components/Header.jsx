@@ -2,11 +2,31 @@ import { useState } from "react";
 import { NFT3 } from "../assets";
 import { HiMenuAlt3 } from "react-icons/hi";
 import { RxCross2 } from "react-icons/rx";
+import { useWeb3Modal } from "@web3modal/wagmi/react";
+import { useAccount } from "wagmi";
 
 const twitter = "https://twitter.com/Banana_Zone_Nft";
 const telegram = "https://t.me/+Ow2gtNSAYwg0NDBk";
 const discord = "https://discord.gg/Bdgdm8Zwgg";
 const insta = "https://instagram.com/banana_zone_club";
+
+const ConnectButton = ({ props }) => {
+  const { open } = useWeb3Modal();
+  const { address, isConnected } = useAccount();
+  if (isConnected)
+    return (
+      <div>
+        <button className={props} onClick={() => open()}>
+          {address.slice(0, 5)}....{address.slice(address.length - 4)}
+        </button>
+      </div>
+    );
+  return (
+    <button className={props} onClick={() => open()}>
+      Connect Wallet
+    </button>
+  );
+};
 
 const Header = () => {
   const [toogleMenu, setToogleMenu] = useState(false);
@@ -22,7 +42,7 @@ const Header = () => {
         <a href={telegram}>Telegram</a>
         <a href={insta}>Instagram</a>
       </div>
-      <button className="md:flex green hidden">Connect Wallet</button>
+      <ConnectButton props="md:flex green hidden" />
       {toogleMenu ? (
         <RxCross2
           fontSize={40}
@@ -43,10 +63,13 @@ const Header = () => {
         >
           <div className="gap-4 z-10 justify-center flex flex-col items-center flex-initial w-[200px] absolute top-12 right-0 rounded-xl glass-effect md:hidden py-5 ">
             <a href={twitter}>Twitter</a>
-            <a href={twitter}>Discord</a>
+            <a href={discord}>Discord</a>
             <a href={telegram}>Telegram</a>
-            <a href={twitter}>Instagram</a>
-            <button className="green">Connect Wallet</button>
+            <a href={insta}>Instagram</a>
+            {/* <button className="green" onClick={() => open()}>
+              Connect Wallet
+            </button> */}
+            <ConnectButton props="green" />
           </div>
         </div>
       )}
