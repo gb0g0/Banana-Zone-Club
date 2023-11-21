@@ -15,6 +15,8 @@ import { contractAddress, contractAbi } from "../utils/index";
 import { useWeb3Modal } from "@web3modal/wagmi/react";
 import { readContract } from "@wagmi/core";
 
+import { getDifference } from "./timeDifference";
+
 const Card = ({
   img,
   title,
@@ -118,8 +120,17 @@ const MintSection = () => {
     // }
   };
 
-  const timeRemaining = 0;
-  
+  const timeRemaining = () => {
+    const targetTime = new Date("2023-11-22T00:00:00");
+    const remainingTime = getDifference(targetTime);
+    console.log(remainingTime);
+    if (remainingTime <= 0) {
+      return 0;
+    } else {
+      return remainingTime;
+    }
+  };
+
   const BtnStyle =
     "green border-[#e2b030ff] flex items-center justify-center active:scale-95 transition-all duration-300";
 
