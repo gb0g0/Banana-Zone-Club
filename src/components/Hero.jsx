@@ -20,7 +20,7 @@ const Hero = () => {
            💎Join and become a Diamond Club member 10/10💎 */}
           <div className="mb-5">
             <a href="#mint">
-              <button className="green border-[#e2b030ff]">Mint Now</button>
+              <button className="green active:scale-95 transition-all duration-300 border-[#e2b030ff]">Mint Now</button>
             </a>
           </div>
         </div>

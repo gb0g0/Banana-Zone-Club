@@ -42,7 +42,7 @@ const Header = () => {
         <a href={telegram}>Telegram</a>
         <a href={insta}>Instagram</a>
       </div>
-      <ConnectButton props="md:flex green hidden" />
+      <ConnectButton props="md:flex green hidden active:scale-95 transition-all duration-300" />
       {toogleMenu ? (
         <RxCross2
           fontSize={40}
