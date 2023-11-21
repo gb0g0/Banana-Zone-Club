@@ -16,6 +16,7 @@ import { useWeb3Modal } from "@web3modal/wagmi/react";
 import { readContract } from "@wagmi/core";
 
 import { getDifference } from "./timeDifference";
+import { Modal } from "./";
 
 const Card = ({
   img,
@@ -144,8 +145,10 @@ const MintSection = () => {
     write({ args: [_to, _amount, _type], value: fee });
   };
   return (
-    <div className="flex flex-wrap w-screen my-[20px] gap-[26px] grotesk justify-center items-center">
-      {/* <Card
+    <>
+      {/* <Modal /> */}
+      <div className="flex flex-wrap w-screen my-[20px] gap-[26px] grotesk justify-center items-center">
+        {/* <Card
         img={NFT1}
         title="Diamond"
         amount={diamondAmount}
@@ -160,74 +163,75 @@ const MintSection = () => {
         amount={regularAmount}
         maxAmount={maxAmount}
       />  */}
-      <div className="flex relative flex-col max-w-xs h-fit justify-start gap-2 p-4 white-glassmorphism hover:shadow-xl">
-        <div className="w-full top-0 right-0 rounded-md flex items-center justify-center">
-          <img src={NFT2} alt={NFT2} srcset="" className="rounded-[16px]" />
-        </div>
-        <div className="flex flex-col flex-1 gap-2 ">
-          <h1 className="mt-2 text-white text-2xl font-bold text-center ">
-            {"Regular NFTs ⚡"}
-          </h1>
-          <div className="flex items-center justify-center gap-5">
-            <div
-              onClick={regularAmount == 0 ? "" : decreaseAmount}
-              className={`w-7 h-7 rounded-md flex items-center justify-center bg-black ${
-                0 == regularAmount
-                  ? "cursor-not-allowed active:100"
-                  : "active:scale-50 cursor-pointer"
-              } transition-all duration-300`}
-            >
-              -
-            </div>
-            <div>{regularAmount}</div>
-            <div
-              onClick={maxAmount != regularAmount && increaseAmount}
-              data-custom-property={NFT2}
-              className={`w-7 h-7 rounded-md flex items-center justify-center bg-black ${
-                maxAmount == regularAmount
-                  ? "cursor-not-allowed active:100"
-                  : "active:scale-50 cursor-pointer"
-              } transition-all duration-300`}
-            >
-              +
-            </div>
+        <div className="flex relative flex-col max-w-xs h-fit justify-start gap-2 p-4 white-glassmorphism hover:shadow-xl">
+          <div className="w-full top-0 right-0 rounded-md flex items-center justify-center">
+            <img src={NFT2} alt={NFT2} srcset="" className="rounded-[16px]" />
           </div>
-          {/* <p className="mt-2 text-[#EBEBF599] font-extralight">{subtitle}</p> */}
-          {address == null ? (
-            <button
-              type="button"
-              className={`${BtnStyle}`}
-              onClick={() => open()}
-            >
-              Connect Wallet
-            </button>
-          ) : (
-            <button
-              className={`${BtnStyle} ${
-                timeRemaining != 0 && "cursor-not-allowed"
-              } ${isLoading && "cursor-not-allowed"}`}
-              onClick={() => {
-                if (timeRemaining == 0 && !isLoading) mint();
-              }}
-            >
-              {timeRemaining != 0 ? (
-                "Minting is Not live Yet"
-              ) : isLoading ? (
-                <div className="flex gap-2">
-                  <div
-                    className="inline-block h-5 w-5 animate-spin rounded-full border-2 border-solid border-current border-r-transparent align-[-0.125em] motion-reduce:animate-[spin_1.5s_linear_infinite]"
-                    role="status"
-                  ></div>
-                  Minting...
-                </div>
-              ) : (
-                "Mint"
-              )}
-            </button>
-          )}
+          <div className="flex flex-col flex-1 gap-2 ">
+            <h1 className="mt-2 text-white text-2xl font-bold text-center ">
+              {"Regular NFTs ⚡"}
+            </h1>
+            <div className="flex items-center justify-center gap-5">
+              <div
+                onClick={regularAmount == 0 ? "" : decreaseAmount}
+                className={`w-7 h-7 rounded-md flex items-center justify-center bg-black ${
+                  0 == regularAmount
+                    ? "cursor-not-allowed active:100"
+                    : "active:scale-50 cursor-pointer"
+                } transition-all duration-300`}
+              >
+                -
+              </div>
+              <div>{regularAmount}</div>
+              <div
+                onClick={maxAmount != regularAmount && increaseAmount}
+                data-custom-property={NFT2}
+                className={`w-7 h-7 rounded-md flex items-center justify-center bg-black ${
+                  maxAmount == regularAmount
+                    ? "cursor-not-allowed active:100"
+                    : "active:scale-50 cursor-pointer"
+                } transition-all duration-300`}
+              >
+                +
+              </div>
+            </div>
+            {/* <p className="mt-2 text-[#EBEBF599] font-extralight">{subtitle}</p> */}
+            {address == null ? (
+              <button
+                type="button"
+                className={`${BtnStyle}`}
+                onClick={() => open()}
+              >
+                Connect Wallet
+              </button>
+            ) : (
+              <button
+                className={`${BtnStyle} ${
+                  timeRemaining != 0 && "cursor-not-allowed"
+                } ${isLoading && "cursor-not-allowed"}`}
+                onClick={() => {
+                  if (timeRemaining == 0 && !isLoading) mint();
+                }}
+              >
+                {timeRemaining != 0 ? (
+                  "Minting is Not live Yet"
+                ) : isLoading ? (
+                  <div className="flex gap-2">
+                    <div
+                      className="inline-block h-5 w-5 animate-spin rounded-full border-2 border-solid border-current border-r-transparent align-[-0.125em] motion-reduce:animate-[spin_1.5s_linear_infinite]"
+                      role="status"
+                    ></div>
+                    Minting...
+                  </div>
+                ) : (
+                  "Mint"
+                )}
+              </button>
+            )}
+          </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 export default MintSection;
