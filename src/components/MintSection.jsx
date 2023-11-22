@@ -122,7 +122,7 @@ const MintSection = () => {
   };
 
   const timeRemaining = () => {
-    const targetTime = new Date("2023-11-21T00:00:00");
+    const targetTime = new Date("2023-11-22T11:00:00");
     const remainingTime = getDifference(targetTime);
     console.log(remainingTime);
     if (remainingTime <= 0) {

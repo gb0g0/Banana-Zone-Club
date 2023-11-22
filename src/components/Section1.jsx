@@ -1,7 +1,7 @@
 import { CountdownTimer } from "./";
 
 const Section1 = () => {
-  const targetTime = new Date("2023-11-22T12:00:00");
+  const targetTime = new Date("2023-11-22T11:00:00");
   return (
     <div
       id="mint"
