@@ -67,7 +67,7 @@ const Card = ({
 );
 //
 const MintSection = () => {
-  const maxAmount = 5;
+  const maxAmount = 2000;
 
   const [diamondAmount, setDiamondAmount] = useState(1);
   const [VIPAmount, setVIPAmount] = useState(1);
@@ -122,7 +122,7 @@ const MintSection = () => {
   };
 
   const timeRemaining = () => {
-    const targetTime = new Date("2023-11-22T00:00:00");
+    const targetTime = new Date("2023-11-21T00:00:00");
     const remainingTime = getDifference(targetTime);
     console.log(remainingTime);
     if (remainingTime <= 0) {
@@ -134,7 +134,9 @@ const MintSection = () => {
 
   const BtnStyle =
     "green border-[#e2b030ff] flex items-center justify-center active:scale-95 transition-all duration-300";
-
+  const fee =
+    BigInt(price[2] == undefined ? "0" : price[2]) * BigInt(regularAmount);
+  // console.log(price[2].toString());
   const mint = async () => {
     const _to = address;
     const _amount = regularAmount;
@@ -173,9 +175,9 @@ const MintSection = () => {
             </h1>
             <div className="flex items-center justify-center gap-5">
               <div
-                onClick={regularAmount == 0 ? "" : decreaseAmount}
+                onClick={regularAmount == 1 ? "" : decreaseAmount}
                 className={`w-7 h-7 rounded-md flex items-center justify-center bg-black ${
-                  0 == regularAmount
+                  1 == regularAmount
                     ? "cursor-not-allowed active:100"
                     : "active:scale-50 cursor-pointer"
                 } transition-all duration-300`}
@@ -195,6 +197,9 @@ const MintSection = () => {
                 +
               </div>
             </div>
+            <div className="flex items-center justify-center gap-5">{`Price: ${formatEther(
+              fee
+            )} Matic`}</div>
             {/* <p className="mt-2 text-[#EBEBF599] font-extralight">{subtitle}</p> */}
             {address == null ? (
               <button
@@ -207,13 +212,13 @@ const MintSection = () => {
             ) : (
               <button
                 className={`${BtnStyle} ${
-                  timeRemaining != 0 && "cursor-not-allowed"
+                  timeRemaining() != 0 && "cursor-not-allowed"
                 } ${isLoading && "cursor-not-allowed"}`}
                 onClick={() => {
-                  if (timeRemaining == 0 && !isLoading) mint();
+                  if (timeRemaining() == 0 && !isLoading) mint();
                 }}
               >
-                {timeRemaining != 0 ? (
+                {timeRemaining() != 0 ? (
                   "Minting is Not live Yet"
                 ) : isLoading ? (
                   <div className="flex gap-2">

@@ -11,7 +11,7 @@ export function getDifference(targetTime) {
   };
   const time = new Date();
   const currentTime = formatDateToISO(time);
-  const endOfCountdown = formatDateToISO(targetTime.targetTime);
+  const endOfCountdown = formatDateToISO(targetTime);
 
   const timeDifference = new Date(endOfCountdown) - new Date(currentTime);
   return timeDifference;
