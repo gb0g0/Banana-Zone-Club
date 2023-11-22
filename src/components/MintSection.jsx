@@ -134,8 +134,7 @@ const MintSection = () => {
 
   const BtnStyle =
     "green border-[#e2b030ff] flex items-center justify-center active:scale-95 transition-all duration-300";
-  const fee =
-    BigInt(price[2] == undefined ? "0" : price[2]) * BigInt(regularAmount);
+  const fee = BigInt(3000000000000000000n) * BigInt(regularAmount);
   // console.log(price[2].toString());
   const mint = async () => {
     const _to = address;

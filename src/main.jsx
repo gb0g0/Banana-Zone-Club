@@ -18,11 +18,11 @@ const metadata = {
   icons: ["https://avatars.githubusercontent.com/u/37784886"],
 };
 
-const chains = [polygon, polygonMumbai];
+const chains = [polygon];
 const wagmiConfig = defaultWagmiConfig({ chains, projectId, metadata });
 
 // 3. Create modal
-createWeb3Modal({ wagmiConfig, projectId, chains, defaultChain: mainnet });
+createWeb3Modal({ wagmiConfig, projectId, chains, defaultChain: polygon });
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <WagmiConfig config={wagmiConfig}>
